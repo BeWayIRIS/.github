@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="220" height="220">
+  <title>BeWay · Cogitator Phi</title>
+  <desc>Engranaje con la letra griega Phi al centro — sello del repositorio SCRIPT-IRIS.</desc>
+  <defs>
+    <mask id="gear-cutout">
+      <rect width="400" height="400" fill="white"/>
+      <circle cx="200" cy="200" r="115" fill="black"/>
+    </mask>
+  </defs>
+  <g fill="#0b0b0b">
+    <!-- 12 trapezoidal teeth around the cog -->
+    <g>
+      <!-- Tooth template, rotated 12 times -->
+      <g transform="translate(200,200)">
+        <g>
+          <polygon points="-22,-185 22,-185 30,-150 -30,-150" transform="rotate(0)"/>
+          <polygon points="-22,-185 22,-185 30,-150 -30,-150" transform="rotate(30)"/>
+          <polygon points="-22,-185 22,-185 30,-150 -30,-150" transform="rotate(60)"/>
+          <polygon points="-22,-185 22,-185 30,-150 -30,-150" transform="rotate(90)"/>
+          <polygon points="-22,-185 22,-185 30,-150 -30,-150" transform="rotate(120)"/>
+          <polygon points="-22,-185 22,-185 30,-150 -30,-150" transform="rotate(150)"/>
+          <polygon points="-22,-185 22,-185 30,-150 -30,-150" transform="rotate(180)"/>
+          <polygon points="-22,-185 22,-185 30,-150 -30,-150" transform="rotate(210)"/>
+          <polygon points="-22,-185 22,-185 30,-150 -30,-150" transform="rotate(240)"/>
+          <polygon points="-22,-185 22,-185 30,-150 -30,-150" transform="rotate(270)"/>
+          <polygon points="-22,-185 22,-185 30,-150 -30,-150" transform="rotate(300)"/>
+          <polygon points="-22,-185 22,-185 30,-150 -30,-150" transform="rotate(330)"/>
+        </g>
+      </g>
+    </g>
+    <!-- Outer ring with inner cutout -->
+    <circle cx="200" cy="200" r="155" mask="url(#gear-cutout)"/>
+  </g>
+  <!-- Greek letter Phi at center -->
+  <g fill="#0b0b0b">
+    <!-- Vertical stem -->
+    <rect x="192" y="115" width="16" height="170" rx="2"/>
+    <!-- Oval body of Phi -->
+    <ellipse cx="200" cy="200" rx="55" ry="40" fill="none" stroke="#0b0b0b" stroke-width="16"/>
+  </g>
+</svg>
