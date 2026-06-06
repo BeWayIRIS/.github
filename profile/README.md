@@ -12,7 +12,7 @@
 
 <div align="center">
 
-![Estructura](https://img.shields.io/badge/estructura-v3.1-1f6feb?style=flat-square)
+![Estructura](https://img.shields.io/badge/estructura-v3.2-1f6feb?style=flat-square)
 ![Marco](https://img.shields.io/badge/marco-DAMA--DMBOK2-0a7d3f?style=flat-square)
 ![Norma](https://img.shields.io/badge/norma-ISO%2027001-555?style=flat-square)
 ![Estado](https://img.shields.io/badge/estado-vivo-success?style=flat-square)
@@ -28,8 +28,8 @@
 | **Workspace** | `SCRIPT-IRIS` — repositorio maestro del programa IRIS |
 | **Propietario** | Francisco C. Ceballos |
 | **Contacto** | <franciscoceballos@beway.com> |
-| **Última actualización** | 2026‑06‑06 |
-| **Versión de estructura** | v3.1 |
+| **Última actualización** | 2026‑06‑07 |
+| **Versión de estructura** | v3.2 |
 | **GitHub** | [github.com/BeWayIRIS](https://github.com/BeWayIRIS) |
 
 ---
@@ -38,7 +38,7 @@
 
 1. [Modelo](#modelo)
 2. [Mapa de carpetas](#mapa-de-carpetas)
-3. [Áreas cliente](#áreas-cliente-del-programa-iris)
+3. [Áreas del programa](#áreas-del-programa-iris)
 4. [Convenciones](#convenciones)
 5. [Cómo navegar](#cómo-navegar-guía-rápida)
 6. [Skill `/dama` — el marco DAMA consultable](#skill-dama--el-marco-dama-consultable)
@@ -55,7 +55,7 @@ El programa IRIS se estructura en cuatro capas:
 
 1. **Gobierno (`00_governance`)** — marco normativo y de referencia: DAMA, ISO 27001, glosario corporativo, bibliografía. Es el cuerpo doctrinal que aplica a toda la org.
 2. **Programa (`01_iris`)** — el propio programa IRIS: documento fundacional, velocidades de despliegue, embajadores. Cómo se opera el gobierno del dato dentro de BeWay.
-3. **Áreas cliente (`02_…` → `10_…`)** — las 9 áreas de la organización a las que IRIS presta servicio. Cada una tiene su propio espacio + repo en GitHub.
+3. **Áreas (`02_…` → `10_…`)** — las 9 áreas a las que IRIS presta servicio, clasificadas en tres grupos: **áreas internas** (Ops, DN, Formación, Diseño/IT, Legal, Administración, P&G), **Centros de Excelencia** (CE_Data) y **área de cliente** (BAIT). Cada una tiene su propio espacio + repo en GitHub.
 4. **Metodologías y utilidades transversales (`11_…` → `13_…`, `assets`, `_archivo`)** — herramientas, entregables publicables y la metodología **BEMATE** de diseño conductual.
 
 ---
@@ -76,15 +76,15 @@ SCRIPT-IRIS/
 │   ├── Velocidad_1/        IRIS FASE0, base Velocidad 1, embajadores, gantt
 │   └── fuentes/            Insumos: política IA, IRIS_v2, transcritos de reuniones
 │
-├── 02_Ops/                 Área Operaciones (consumidora de IRIS)
-├── 03_DN/                  Área Desarrollo de Negocio (Data Native)
-├── 04_CE_Data/             Centro de Excelencia de Datos          [pendiente de poblar]
-├── 05_BAIT/                Área BAIT — IA para cliente (Be-Truth)
-├── 06_Formacion/           Área Formación (mcp-base, bemate-kb)
-├── 07_Diseno/              Área Diseño                            [pendiente de poblar]
-├── 08_Legal/               Área Legal                             [pendiente de poblar]
-├── 09_Administracion/      Área Administración                    [pendiente de poblar]
-├── 10_PyG/                 Área P&G (People & Growth)             [pendiente de poblar]
+├── 02_Ops/                 Área interna · Operaciones
+├── 03_DN/                  Área interna · Desarrollo de Negocio (Data Native)
+├── 04_CE_Data/             Centro de Excelencia · Datos           [pendiente de poblar]
+├── 05_BAIT/                Área de cliente · IA para cliente (Be-Truth)
+├── 06_Formacion/           Área interna · Formación (mcp-base, bemate-kb)
+├── 07_Diseno/              Área interna · Diseño/IT               [pendiente de poblar]
+├── 08_Legal/               Área interna · Legal                   [pendiente de poblar]
+├── 09_Administracion/      Área interna · Administración          [pendiente de poblar]
+├── 10_PyG/                 Área interna · P&G (People & Growth)   [pendiente de poblar]
 │
 ├── 11_herramientas/        Código, automatizaciones y skills
 ├── 12_entregables/         Salidas finales publicables
@@ -102,23 +102,41 @@ SCRIPT-IRIS/
 
 ---
 
-## Áreas cliente del programa IRIS
+## Áreas del programa IRIS
 
-Cada área tiene carpeta local **y** repo privado en GitHub. La estructura interna se está homogeneizando — por defecto se propone `fuentes/`, `procesos/`, `entregables/`.
+Cada área tiene carpeta local **y** repo privado en GitHub. La estructura interna se está homogeneizando — por defecto se propone `fuentes/`, `procesos/`, `entregables/`. Las áreas se clasifican en **tres grupos** según a quién sirven:
+
+### Áreas internas
+
+Las áreas funcionales de BeWay a las que IRIS presta servicio dentro de la organización.
 
 | # | Área | Carpeta local | Repo GitHub | Estado |
 |---|---|---|---|---|
 | 02 | **Ops** — Operaciones | `02_Ops/` | [BeWayIRIS/02_Ops](https://github.com/BeWayIRIS/02_Ops) | Activo |
 | 03 | **DN** — Desarrollo de Negocio | `03_DN/` | [BeWayIRIS/03_DN](https://github.com/BeWayIRIS/03_DN) | Activo (Data Native) |
-| 04 | **CE_Data** — Centro de Excelencia de Datos | `04_CE_Data/` | [BeWayIRIS/04_CE_Data](https://github.com/BeWayIRIS/04_CE_Data) | Pendiente de poblar |
-| 05 | **BAIT** — IA para cliente | `05_BAIT/` | [BeWayIRIS/05_BAIT](https://github.com/BeWayIRIS/05_BAIT) | Activo |
 | 06 | **Formación** | `06_Formacion/` | [BeWayIRIS/06_Formacion](https://github.com/BeWayIRIS/06_Formacion) | En construcción |
-| 07 | **Diseño** | `07_Diseno/` | [BeWayIRIS/07_Diseno](https://github.com/BeWayIRIS/07_Diseno) | Pendiente de poblar |
+| 07 | **Diseño/IT** | `07_Diseno/` | [BeWayIRIS/07_Diseno](https://github.com/BeWayIRIS/07_Diseno) | Pendiente de poblar |
 | 08 | **Legal** | `08_Legal/` | [BeWayIRIS/08_Legal](https://github.com/BeWayIRIS/08_Legal) | Pendiente de poblar |
 | 09 | **Administración** | `09_Administracion/` | [BeWayIRIS/09_Administracion](https://github.com/BeWayIRIS/09_Administracion) | Pendiente de poblar |
 | 10 | **P&G** — People & Growth | `10_PyG/` | [BeWayIRIS/10_PyG](https://github.com/BeWayIRIS/10_PyG) | Pendiente de poblar |
 
-> El antiguo nombre de P&G era *Talento y Cultura*.
+> El antiguo nombre de P&G era *Talento y Cultura*. El área Diseño pasa a denominarse **Diseño/IT** (la carpeta y el repo conservan el nombre `07_Diseno`).
+
+### Centros de Excelencia
+
+Capacidades especializadas transversales: ejecutan para todas las áreas (la gobernanza queda en `00`/`01`).
+
+| # | Área | Carpeta local | Repo GitHub | Estado |
+|---|---|---|---|---|
+| 04 | **CE_Data** — Centro de Excelencia de Datos | `04_CE_Data/` | [BeWayIRIS/04_CE_Data](https://github.com/BeWayIRIS/04_CE_Data) | Pendiente de poblar |
+
+### Área de cliente
+
+IA aplicada a producto/servicio para el cliente final de BeWay.
+
+| # | Área | Carpeta local | Repo GitHub | Estado |
+|---|---|---|---|---|
+| 05 | **BAIT** — IA para cliente (Be‑Truth) | `05_BAIT/` | [BeWayIRIS/05_BAIT](https://github.com/BeWayIRIS/05_BAIT) | Activo |
 
 ---
 
@@ -262,6 +280,7 @@ Revisión del workspace contra DAMA‑DMBOK2 (vía `/dama`). Madurez estimada: *
 
 | Fecha | Cambio | Responsable |
 |---|---|---|
+| 2026‑06‑07 | **v3.2** — nueva taxonomía de áreas en tres grupos: **áreas internas** (Ops, DN, Formación, Diseño/IT, Legal, Administración, P&G), **Centros de Excelencia** (CE_Data) y **área de cliente** (BAIT). El área Diseño pasa a denominarse **Diseño/IT** (carpeta y repo conservan `07_Diseno`). Trazabilidad DAMA de las skills: README por skill con metadata, linaje e historial en `00_governance`. | F. Ceballos + Claude |
 | 2026‑06‑06 | **v3.1** — nueva identidad del programa: **IRIS — Integración de Riesgos, IA y Sistemas** (adopción de IA bajo responsabilidad humana, *hypothesis-driven AI research*). Alta de la skill `/dama` (DMBOK2 + Diccionario DAMA + Navigating the Labyrinth) en `.claude/skills/` y en `00_governance` (compartida vía GitHub con instalador). Primera revisión DM del workspace contra DAMA: nueva sección *Hoja de ruta Data Management* con 5 gaps priorizados y plan en 3 pasos. | F. Ceballos + Claude |
 | 2026‑06‑04 | **v3.0** — alta de `13_BEMATE` (metodología de diseño conductual). Reorganización interna de `01_iris` (`fundacional/`, `Velocidad_1/`, `fuentes/`). Nuevo esquema de GitHub: **un repo por carpeta numerada** (`00_governance`→`13_BEMATE`), nombre de repo idéntico al de la carpeta; recreación completa de los repos en `BeWayIRIS`. | F. Ceballos + Claude |
 | 2026‑05‑28 | **v2.0** — modelo de áreas cliente: SCRIPT-IRIS pasa a estar organizado por las 9 áreas de BeWay que consumen IRIS. Nuevas: CE_Data, Diseño, Legal, Administración, P&G. Renumeración completa. | F. Ceballos + Claude |
