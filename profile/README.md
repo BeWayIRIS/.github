@@ -95,8 +95,9 @@ SCRIPT-IRIS/
 │
 ├── assets/                 Activos visuales del repositorio
 ├── _archivo/               Material deprecated / histórico (no se sube a GitHub)
-└── .claude/skills/dama/    Skill de Claude Code: DMBOK2 + Diccionario DAMA + Labyrinth
-                            (copia compartida del equipo en 00_governance/.claude/skills/)
+└── .claude/skills/         Skills de Claude Code del workspace: dama (conocimiento DAMA)
+                            y sipoc (context diagrams de procesos con detección de gaps)
+                            (copias compartidas del equipo en 00_governance/.claude/skills/)
 ```
 
 ---
