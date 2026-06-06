@@ -55,7 +55,7 @@ El programa IRIS se estructura en cuatro capas:
 
 1. **Gobierno (`00_governance`)** — marco normativo y de referencia: DAMA, ISO 27001, glosario corporativo, bibliografía. Es el cuerpo doctrinal que aplica a toda la org.
 2. **Programa (`01_iris`)** — el propio programa IRIS: documento fundacional, velocidades de despliegue, embajadores. Cómo se opera el gobierno del dato dentro de BeWay.
-3. **Áreas (`02_…` → `10_…`)** — las 9 áreas a las que IRIS presta servicio, clasificadas en tres grupos: **áreas internas** (Ops, DN, Formación, Diseño/IT, Legal, Administración, P&G), **Centros de Excelencia** (CE_Data) y **área de cliente** (BAIT). Cada una tiene su propio espacio + repo en GitHub.
+3. **Áreas (`02_…` → `10_…`)** — las 9 áreas a las que IRIS presta servicio, clasificadas en tres grupos: **áreas internas** (Ops, DN — Desarrollo de Negocio, Formación, Diseño/IT, Legal, Administración, P&G), **Centros de Excelencia** (CE_Data) y **área de cliente** (BAIT). Cada una tiene su propio espacio + repo en GitHub.
 4. **Metodologías y utilidades transversales (`11_…` → `13_…`, `assets`, `_archivo`)** — herramientas, entregables publicables y la metodología **BEMATE** de diseño conductual.
 
 ---
@@ -77,7 +77,7 @@ SCRIPT-IRIS/
 │   └── fuentes/            Insumos: política IA, IRIS_v2, transcritos de reuniones
 │
 ├── 02_Ops/                 Área interna · Operaciones
-├── 03_DN/                  Área interna · Desarrollo de Negocio (Data Native)
+├── 03_DN/                  Área interna · Desarrollo de Negocio
 ├── 04_CE_Data/             Centro de Excelencia · Datos           [pendiente de poblar]
 ├── 05_BAIT/                Área de cliente · IA para cliente (Be-Truth)
 ├── 06_Formacion/           Área interna · Formación (mcp-base, bemate-kb)
@@ -113,7 +113,7 @@ Las áreas funcionales de BeWay a las que IRIS presta servicio dentro de la orga
 | # | Área | Carpeta local | Repo GitHub | Estado |
 |---|---|---|---|---|
 | 02 | **Ops** — Operaciones | `02_Ops/` | [BeWayIRIS/02_Ops](https://github.com/BeWayIRIS/02_Ops) | Activo |
-| 03 | **DN** — Desarrollo de Negocio | `03_DN/` | [BeWayIRIS/03_DN](https://github.com/BeWayIRIS/03_DN) | Activo (Data Native) |
+| 03 | **DN** — Desarrollo de Negocio | `03_DN/` | [BeWayIRIS/03_DN](https://github.com/BeWayIRIS/03_DN) | Activo |
 | 06 | **Formación** | `06_Formacion/` | [BeWayIRIS/06_Formacion](https://github.com/BeWayIRIS/06_Formacion) | En construcción |
 | 07 | **Diseño/IT** | `07_Diseno/` | [BeWayIRIS/07_Diseno](https://github.com/BeWayIRIS/07_Diseno) | Pendiente de poblar |
 | 08 | **Legal** | `08_Legal/` | [BeWayIRIS/08_Legal](https://github.com/BeWayIRIS/08_Legal) | Pendiente de poblar |
@@ -262,7 +262,7 @@ Revisión del workspace contra DAMA‑DMBOK2 (vía `/dama`). Madurez estimada: *
 | `00_governance` | Estable | En mantenimiento. |
 | `01_iris` | Activo | Fundacional cerrado; Velocidad 1 en despliegue + selección de embajadores. |
 | `02_Ops` | Activo | Modelando procesos 2.0. |
-| `03_DN` | Activo | Blueprint v1 entregado (Data Native). |
+| `03_DN` | Activo | Blueprint *Data Native* v1 entregado (proyecto del área). |
 | `04_CE_Data` | Pendiente | Por arrancar. |
 | `05_BAIT` | Activo | Marco conceptual v0; refinando M1‑M2. |
 | `06_Formacion` | En construcción | MCP base operativo; BeMate KB en consolidación. |
@@ -280,6 +280,7 @@ Revisión del workspace contra DAMA‑DMBOK2 (vía `/dama`). Madurez estimada: *
 
 | Fecha | Cambio | Responsable |
 |---|---|---|
+| 2026‑06‑07 | **Corrección DN** — el área 03 es **Desarrollo de Negocio** (área interna); *Data Native* es el nombre del blueprint/proyecto que vive en `03_DN/blueprint/`, no del área. Corregido en README maestro, portal y README del repo `03_DN`. | F. Ceballos + Claude |
 | 2026‑06‑07 | **v3.2** — nueva taxonomía de áreas en tres grupos: **áreas internas** (Ops, DN, Formación, Diseño/IT, Legal, Administración, P&G), **Centros de Excelencia** (CE_Data) y **área de cliente** (BAIT). El área Diseño pasa a denominarse **Diseño/IT** (carpeta y repo conservan `07_Diseno`). Trazabilidad DAMA de las skills: README por skill con metadata, linaje e historial en `00_governance`. | F. Ceballos + Claude |
 | 2026‑06‑06 | **v3.1** — nueva identidad del programa: **IRIS — Integración de Riesgos, IA y Sistemas** (adopción de IA bajo responsabilidad humana, *hypothesis-driven AI research*). Alta de la skill `/dama` (DMBOK2 + Diccionario DAMA + Navigating the Labyrinth) en `.claude/skills/` y en `00_governance` (compartida vía GitHub con instalador). Primera revisión DM del workspace contra DAMA: nueva sección *Hoja de ruta Data Management* con 5 gaps priorizados y plan en 3 pasos. | F. Ceballos + Claude |
 | 2026‑06‑04 | **v3.0** — alta de `13_BEMATE` (metodología de diseño conductual). Reorganización interna de `01_iris` (`fundacional/`, `Velocidad_1/`, `fuentes/`). Nuevo esquema de GitHub: **un repo por carpeta numerada** (`00_governance`→`13_BEMATE`), nombre de repo idéntico al de la carpeta; recreación completa de los repos en `BeWayIRIS`. | F. Ceballos + Claude |
