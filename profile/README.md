@@ -12,7 +12,7 @@
 
 <div align="center">
 
-![Estructura](https://img.shields.io/badge/estructura-v3.2-1f6feb?style=flat-square)
+![Estructura](https://img.shields.io/badge/estructura-v3.3-1f6feb?style=flat-square)
 ![Marco](https://img.shields.io/badge/marco-DAMA--DMBOK2-0a7d3f?style=flat-square)
 ![Norma](https://img.shields.io/badge/norma-ISO%2027001-555?style=flat-square)
 ![Estado](https://img.shields.io/badge/estado-vivo-success?style=flat-square)
@@ -28,8 +28,8 @@
 | **Workspace** | `SCRIPT-IRIS` — repositorio maestro del programa IRIS |
 | **Propietario** | Francisco C. Ceballos |
 | **Contacto** | <franciscoceballos@beway.com> |
-| **Última actualización** | 2026‑06‑07 |
-| **Versión de estructura** | v3.2 |
+| **Última actualización** | 2026‑06‑11 |
+| **Versión de estructura** | v3.3 |
 | **GitHub** | [github.com/BeWayIRIS](https://github.com/BeWayIRIS) |
 
 ---
@@ -56,7 +56,7 @@ El programa IRIS se estructura en cuatro capas:
 1. **Gobierno (`00_governance`)** — marco normativo y de referencia: DAMA, ISO 27001, glosario corporativo, bibliografía. Es el cuerpo doctrinal que aplica a toda la org.
 2. **Programa (`01_iris`)** — el propio programa IRIS: documento fundacional, velocidades de despliegue, embajadores. Cómo se opera el gobierno del dato dentro de BeWay.
 3. **Áreas (`02_…` → `10_…`)** — las 9 áreas a las que IRIS presta servicio, clasificadas en tres grupos: **áreas internas** (Ops, DN — Desarrollo de Negocio, Formación, Diseño/IT, Legal, Administración, P&G), **Centros de Excelencia** (CE_Data) y **área de cliente** (BAIT). Cada una tiene su propio espacio + repo en GitHub.
-4. **Metodologías y utilidades transversales (`11_…` → `13_…`, `assets`, `_archivo`)** — herramientas, entregables publicables y la metodología **BEMATE** de diseño conductual.
+4. **Metodologías, proyectos y utilidades transversales (`11_…` → `15_…`, `assets`, `_archivo`)** — herramientas, entregables publicables, la metodología **BEMATE** de diseño conductual, la **auditoría de seguridad ISO 27001** (PRO26‑023) y el proyecto **IAMA** (IA Maturity Assessment).
 
 ---
 
@@ -66,32 +66,47 @@ El programa IRIS se estructura en cuatro capas:
 SCRIPT-IRIS/
 │
 ├── 00_governance/          Marco normativo y de gobierno (DAMA, ISO, glosario, bibliografía)
-│   ├── dama-dmbok/         Knowledge areas DAMA (EN/ES)
+│   ├── dama-dmbok/         Knowledge areas DAMA (EN/ES) + roles de gobierno del dato
 │   ├── iso-27001/          Normativa ISO 27001 y ofertas de securización
 │   ├── glosario/           Glosario corporativo único (fuente de verdad)
-│   └── bibliografia/       Libros y manuales de referencia
+│   ├── bibliografia/       Libros y manuales de referencia
+│   └── CDMP/               Preparación del examen CDMP (banco de preguntas, skill /cdmp)
 │
 ├── 01_iris/                Programa IRIS — fundacional, velocidades y embajadores
-│   ├── fundacional/        Documento fundacional, bases v1/v3/v4, política de uso de IA, EDA licencias
-│   ├── Velocidad_1/        IRIS FASE0, base Velocidad 1, embajadores, gantt
-│   └── fuentes/            Insumos: política IA, IRIS_v2, transcritos de reuniones
+│   ├── fundacional/        Documento fundacional, documento maestro, bases v1/v3/v4, EDA licencias
+│   ├── Velocidad_1/        Presentación Fase 0, doc Velocidad 1, embajadores
+│   ├── Velocidad_2/        Segunda velocidad de despliegue (en preparación)
+│   └── fuentes/            Insumos: política IA, IRIS_v2, plan general, transcritos de reuniones
 │
 ├── 02_Ops/                 Área interna · Operaciones
 ├── 03_DN/                  Área interna · Desarrollo de Negocio
 ├── 04_CE_Data/             Centro de Excelencia · Datos           [pendiente de poblar]
-├── 05_BAIT/                Área de cliente · IA para cliente (Be-Truth)
+├── 05_BAIT/                Área de cliente · IA para cliente (Be-Truth) + clon de trabajo de trama
 ├── 06_Formacion/           Área interna · Formación (mcp-base, bemate-kb)
 ├── 07_Diseno/              Área interna · Diseño/IT               [pendiente de poblar]
-├── 08_Legal/               Área interna · Legal                   [pendiente de poblar]
+├── 08_Legal/               Área interna · Legal — fuentes iniciales (política de uso de IA)
 ├── 09_Administracion/      Área interna · Administración          [pendiente de poblar]
 ├── 10_PyG/                 Área interna · P&G (People & Growth)   [pendiente de poblar]
 │
 ├── 11_herramientas/        Código, automatizaciones y skills
 ├── 12_entregables/         Salidas finales publicables
-├── 13_BEMATE/              Metodología BeMate — diseño conductual (10 pasos + PreWork, 6 CE)  [NUEVA]
-│   ├── fuentes/            Manuales paso 01–09, blueprints CE, modelo CEs, contenidos formativos
-│   ├── BeSisSol/           Behavioral Systems Solutions (BSS) — auditoría conductual
-│   └── INDICE_BASE_CONOCIMIENTO_BEMATE.md   Índice navegable de la base de conocimiento
+├── 13_BEMATE/              Repo oficial de la metodología BeMate (BAIT) — corpus markdown + pilotos
+│   ├── INDEX.md            Punto de entrada: rutas por perfil, por CE, por capa y por estado
+│   ├── Marco/              Doctrina: qué es BeMate, 6 Centros de Excelencia, glosario, roadmap
+│   ├── Manuales/           11 manuales rectores (Paso 0 PreWork → Paso 10), uno por paso
+│   ├── Artefactos/         ~74 artefactos operativos por paso (plantillas, instructivos, runbooks)
+│   ├── Casos/              Best practices de proyectos cerrados (B100-Abanca)
+│   ├── Operacion/          Modelo operador IA: manual, escalado, umbrales, decision log, auditoría
+│   └── pilotos/            Pilotos del modelo operador IA (e2e-01 preparado, pendiente de cliente)
+│
+├── 14_ISO-27001/           Auditoría de Seguridad de la Información PRO26-023 (CyS Management)
+│   │                       ⚠️ CONFIDENCIAL — NDA · solo local, sin repo en GitHub
+│   ├── AUD1.01 .../        Arquitectura Empresarial — buzones de entrega I01–I14
+│   ├── AUD1.02 .../        Arquitectura TIC — buzones de entrega I01–I21
+│   └── 02 Meeting Records/ Kick-off (2026-05-21) y reuniones de control
+│
+├── 15_IAMA/                Proyecto IAMA — IA Maturity Assessment de departamentos internos
+│                           (reutiliza el motor Patrón de trama; en diseño, sin repo aún)
 │
 ├── assets/                 Activos visuales del repositorio
 ├── _archivo/               Material deprecated / histórico (no se sube a GitHub)
@@ -116,7 +131,7 @@ Las áreas funcionales de BeWay a las que IRIS presta servicio dentro de la orga
 | 03 | **DN** — Desarrollo de Negocio | `03_DN/` | [BeWayIRIS/03_DN](https://github.com/BeWayIRIS/03_DN) | Activo |
 | 06 | **Formación** | `06_Formacion/` | [BeWayIRIS/06_Formacion](https://github.com/BeWayIRIS/06_Formacion) | En construcción |
 | 07 | **Diseño/IT** | `07_Diseno/` | [BeWayIRIS/07_Diseno](https://github.com/BeWayIRIS/07_Diseno) | Pendiente de poblar |
-| 08 | **Legal** | `08_Legal/` | [BeWayIRIS/08_Legal](https://github.com/BeWayIRIS/08_Legal) | Pendiente de poblar |
+| 08 | **Legal** | `08_Legal/` | [BeWayIRIS/08_Legal](https://github.com/BeWayIRIS/08_Legal) | Inicializada — primeras fuentes |
 | 09 | **Administración** | `09_Administracion/` | [BeWayIRIS/09_Administracion](https://github.com/BeWayIRIS/09_Administracion) | Pendiente de poblar |
 | 10 | **P&G** — People & Growth | `10_PyG/` | [BeWayIRIS/10_PyG](https://github.com/BeWayIRIS/10_PyG) | Pendiente de poblar |
 
@@ -170,7 +185,8 @@ IA aplicada a producto/servicio para el cliente final de BeWay.
 ### GitHub — nomenclatura de repos
 
 - Todos los repos viven en [**BeWayIRIS**](https://github.com/BeWayIRIS) y son **privados**.
-- **Un repo por carpeta raíz numerada** (`00_governance` → `13_BEMATE`). El nombre del repo es **idéntico al de la carpeta local**, prefijo numérico incluido, para preservar el orden visual y el mapeo 1:1 carpeta ↔ repo.
+- **Un repo por carpeta raíz numerada** (`00_governance` → `12_entregables`). El nombre del repo es **idéntico al de la carpeta local**, prefijo numérico incluido, para preservar el orden visual y el mapeo 1:1 carpeta ↔ repo.
+- **Excepciones al mapeo:** `13_BEMATE` es clon del repo oficial [`BeWayBAIT/BeMate`](https://github.com/BeWayBAIT/BeMate) (el `BeWayIRIS/13_BEMATE` original queda obsoleto); `14_ISO-27001` **no tiene repo** (material NDA, solo local); `15_IAMA` aún no tiene repo (en diseño); `05_BAIT/trama/` es un clon de trabajo de [`BeWayBAIT/trama`](https://github.com/BeWayBAIT/trama) y no se versiona dentro de `05_BAIT`.
 - `assets/` y `_archivo/` **no** se suben a GitHub (activos del repo maestro y material deprecated, respectivamente).
 
 ---
@@ -190,7 +206,10 @@ IA aplicada a producto/servicio para el cliente final de BeWay.
 | Blueprint Data Native | `03_DN/blueprint/` |
 | Material Be-Truth | `05_BAIT/Be-Truth/` |
 | Material de formación | `06_Formacion/` |
-| Metodología BeMate (10 pasos, CE) | `13_BEMATE/` |
+| Metodología BeMate (11 pasos, 6 CE, operador IA) | `13_BEMATE/INDEX.md` ([BeWayBAIT/BeMate](https://github.com/BeWayBAIT/BeMate)) |
+| Auditoría de seguridad ISO 27001 (PRO26‑023) | `14_ISO-27001/` (⚠️ NDA, solo local) |
+| Madurez IA de un departamento interno (IAMA) | `15_IAMA/iama_base.md` |
+| Preparar el examen CDMP | `00_governance/CDMP/` + skill `/cdmp` |
 | Script o automatización | `11_herramientas/` |
 | Una versión publicada y estable | `12_entregables/` |
 | Algo antiguo o deprecated | `_archivo/` |
@@ -260,19 +279,21 @@ Revisión del workspace contra DAMA‑DMBOK2 (vía `/dama`). Madurez estimada: *
 | Capa | Estado | Notas |
 |---|---|---|
 | `00_governance` | Estable | En mantenimiento. |
-| `01_iris` | Activo | Fundacional cerrado; Velocidad 1 en despliegue + selección de embajadores. |
+| `01_iris` | Activo | Fundacional cerrado (documento maestro); Velocidad 1 en despliegue + selección de embajadores; Velocidad 2 en preparación. |
 | `02_Ops` | Activo | Modelando procesos 2.0. |
 | `03_DN` | Activo | Blueprint *Data Native* v1 entregado (proyecto del área). |
 | `04_CE_Data` | Pendiente | Por arrancar. |
-| `05_BAIT` | Activo | Marco conceptual v0; refinando M1‑M2. |
+| `05_BAIT` | Activo | Marco conceptual v0; refinando M1‑M2. Clon de trabajo de `trama` (BeWayBAIT) como referencia. |
 | `06_Formacion` | En construcción | MCP base operativo; BeMate KB en consolidación. |
 | `07_Diseno` | Pendiente | Por arrancar. |
-| `08_Legal` | Pendiente | Por arrancar. |
+| `08_Legal` | Inicializada | Primeras fuentes (Política de Uso de IA). |
 | `09_Administracion` | Pendiente | Por arrancar. |
 | `10_PyG` | Pendiente | Por arrancar. |
 | `11_herramientas` | Mixto | `slack-downloader` operativo; resto en evaluación. |
-| `12_entregables` | Pendiente | A poblar desde proyectos individuales. |
-| `13_BEMATE` | Activo | Base de conocimiento e índice navegable; BeSisSol (BSS) en Fase 1. |
+| `12_entregables` | Arrancado | Informe post‑migración + referencia rápida de skills de Claude Code (PDF). |
+| `13_BEMATE` | Activo | Corpus v2 migrado (~124 docs md): 11 manuales + 74 artefactos + capa Operación (operador IA). `AGENTS.md` + skill `bemate-operador-ia`; piloto e2e‑01 preparado, pendiente de cliente. Repo oficial: `BeWayBAIT/BeMate`. |
+| `14_ISO-27001` | Activo | Auditoría PRO26‑023 en curso (kick‑off 2026‑05‑21, ~9 semanas). 5/35 inputs con datos, 21 en plantilla, 10 vacíos. ⚠️ NDA — solo local. |
+| `15_IAMA` | En diseño | Documento base de contexto creado; arquitectura heredada de trama (Patrón). Sin repo aún. |
 
 ---
 
@@ -280,6 +301,8 @@ Revisión del workspace contra DAMA‑DMBOK2 (vía `/dama`). Madurez estimada: *
 
 | Fecha | Cambio | Responsable |
 |---|---|---|
+| 2026‑06‑11 | **v3.3** — alta de `14_ISO-27001/` (auditoría de seguridad PRO26‑023 de CyS Management; ⚠️ NDA, solo local, sin repo) y de `15_IAMA/` (proyecto IA Maturity Assessment sobre el motor Patrón de trama). Alta del clon de trabajo `05_BAIT/trama/` (BeWayBAIT/trama) y de `00_governance/CDMP/` (preparación del examen CDMP). Primeras fuentes en `08_Legal/` (Política de Uso de IA). Limpieza de `01_iris/Velocidad_1` (renombrados Fase 0 / Velocidad 1) y alta de `Velocidad_2/`. | F. Ceballos + Claude |
+| 2026‑06‑10 | **Reestructuración de `13_BEMATE`** — pasa de base de conocimiento (fuentes + índice) a **repositorio oficial de la metodología BeMate** (`BeWayBAIT/BeMate`) con corpus markdown migrado (Marco, 11 manuales, ~74 artefactos, Casos, Operación), modelo de **operador IA** (modos copiloto/primario, umbrales, escalado, decision log con JSON Schemas) y primer piloto e2e preparado. `INDEX.md` sustituye a `INDICE_BASE_CONOCIMIENTO_BEMATE.md` como punto de entrada. | F. Ceballos + Claude |
 | 2026‑06‑07 | **Corrección DN** — el área 03 es **Desarrollo de Negocio** (área interna); *Data Native* es el nombre del blueprint/proyecto que vive en `03_DN/blueprint/`, no del área. Corregido en README maestro, portal y README del repo `03_DN`. | F. Ceballos + Claude |
 | 2026‑06‑07 | **v3.2** — nueva taxonomía de áreas en tres grupos: **áreas internas** (Ops, DN, Formación, Diseño/IT, Legal, Administración, P&G), **Centros de Excelencia** (CE_Data) y **área de cliente** (BAIT). El área Diseño pasa a denominarse **Diseño/IT** (carpeta y repo conservan `07_Diseno`). Trazabilidad DAMA de las skills: README por skill con metadata, linaje e historial en `00_governance`. | F. Ceballos + Claude |
 | 2026‑06‑06 | **v3.1** — nueva identidad del programa: **IRIS — Integración de Riesgos, IA y Sistemas** (adopción de IA bajo responsabilidad humana, *hypothesis-driven AI research*). Alta de la skill `/dama` (DMBOK2 + Diccionario DAMA + Navigating the Labyrinth) en `.claude/skills/` y en `00_governance` (compartida vía GitHub con instalador). Primera revisión DM del workspace contra DAMA: nueva sección *Hoja de ruta Data Management* con 5 gaps priorizados y plan en 3 pasos. | F. Ceballos + Claude |
